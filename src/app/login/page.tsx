@@ -11,6 +11,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation'; // Import useRouter
 
 const loginSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
@@ -22,6 +23,7 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
   const { toast } = useToast();
+  const router = useRouter(); // Initialize useRouter
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -36,12 +38,18 @@ export default function LoginPage() {
     console.log("Login data:", data);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
+    
     toast({
-      title: "Login Submitted (Mock)",
-      description: `Email: ${data.email}, Role: ${data.role}`,
+      title: "Login Successful (Mock)",
+      description: `Redirecting to ${data.role} dashboard...`,
     });
-    // In a real app, redirect based on role after successful login
-    // For example: router.push(data.role === 'admin' ? '/admin/dashboard' : '/employee/dashboard');
+
+    // Redirect based on role
+    if (data.role === 'admin') {
+      router.push('/admin/dashboard');
+    } else {
+      router.push('/employee/dashboard');
+    }
   };
 
   return (
