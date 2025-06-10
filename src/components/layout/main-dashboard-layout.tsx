@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC, ReactNode } from 'react';
 import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from './app-sidebar';
