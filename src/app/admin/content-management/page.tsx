@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -84,13 +85,15 @@ export default function ContentManagementPage() {
           <CardTitle className="font-headline flex items-center justify-between">
             All Content Items
             <div className="flex items-center gap-2">
-               <Input
-                placeholder="Search content..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="max-w-xs"
-                icon={<Search className="h-4 w-4 text-muted-foreground" />}
-              />
+              <div className="relative max-w-xs">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  placeholder="Search content..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10" 
+                />
+              </div>
               <Button variant="outline" size="icon"><Filter className="h-4 w-4"/></Button>
             </div>
           </CardTitle>
