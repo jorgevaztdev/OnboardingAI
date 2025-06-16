@@ -1,95 +1,53 @@
-# OnboardingAI
+# 📊 Rapid Feedback Insights Tool
 
-# LearnScale AI: An AI-Enhanced Onboarding & Training Platform
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## 🚀 Project Overview
+A simple but powerful web application designed for Product Managers to quickly analyze, categorize, and summarize raw user feedback using the power of Google's Gemini LLM. This tool turns unstructured qualitative data into actionable, structured insights in seconds.
 
-**LearnScale AI** is an innovative AI-powered platform designed to revolutionize employee onboarding and continuous learning, particularly for global, rapidly growing teams. Leveraging cutting-edge Generative AI, this platform provides personalized learning paths, instant answers through an AI chatbot, and efficient content summarization, aiming to accelerate new hire productivity and streamline knowledge transfer.
+## The Problem
 
-This project demonstrates a practical application of Artificial Intelligence to solve a common enterprise challenge: ensuring consistent, scalable, and engaging training across diverse teams. It showcases product management principles from ideation to high-level architecture, focusing on user experience, data-driven decision-making, and strategic impact.
+Product Managers are constantly inundated with user feedback from various sources: App Store reviews, customer surveys, support tickets, and social media comments. Manually sifting through this mountain of text is incredibly time-consuming and inefficient. It creates a significant delay between receiving feedback and deriving the actionable insights needed to make informed product decisions.
 
-## ✨ Features
+## The Solution
 
-* **Personalized Learning Paths:** AI-driven questionnaire assesses new hires' roles and prior knowledge to recommend tailored onboarding modules and ongoing training content.
-* **Intelligent AI Chatbot:** Provides instant, accurate answers to common company policy, process, or product questions by leveraging uploaded training materials. Reduces reliance on human HR/L&D support.
-* **Content Summarization:** Generative AI condenses lengthy documents, videos, and articles into concise summaries, enabling faster knowledge absorption.
-* **AI-Generated Quizzes:** Automatically creates quizzes based on learning modules to help users self-assess their understanding and reinforce learning.
-* **Progress Tracking & Analytics:** Intuitive dashboards for users to track their learning journey and for admins (HR/L&D) to monitor completion rates, engagement, and knowledge retention.
-* **Robust Content Management:** Secure system for administrators to upload, categorize, and manage diverse training content formats.
+This tool provides a simple interface to paste raw user feedback and leverage a Large Language Model to automate the entire analysis process. It acts as an AI assistant for the PM, providing instant structure and clarity to the voice of the customer.
 
-## 💡 Problem Solved
+### Features
 
-In today's fast-paced global economy, companies with distributed teams often struggle with:
-* Inconsistent onboarding experiences.
-* Slow time-to-productivity for new hires.
-* Overburdened HR and L&D teams managing repetitive queries.
-* Difficulty in keeping training content up-to-date and easily accessible.
-* Lack of personalized learning tailored to individual needs.
+* ✅ **Instant Sentiment Analysis:** Automatically classifies each piece of feedback as `Positive`, `Negative`, or `Neutral`.
+* 🗂️ **Automatic Categorization:** Sorts feedback into key PM-relevant categories like `Bug Report`, `Feature Request`, `UI/UX Feedback`, etc.
+* 📝 **Concise Summaries:** Generates a one-sentence summary for each feedback entry, perfect for quick scanning.
+* 📈 **Executive Summary:** Creates a high-level overview of all the feedback, highlighting key themes and urgent issues for stakeholders.
 
-LearnScale AI directly addresses these challenges by providing a scalable, intelligent solution that empowers employees and optimizes training operations.
+## Demo
 
-## 🛠️ Technology Stack (High-Level)
+*(It is highly recommended to create a short GIF of your app in action and place it here!)*
 
-* **Backend:** Google Firebase (Authentication, Firestore Database, Cloud Functions for serverless logic).
-* **Frontend:** Lovable / Bolt (for rapid UI development and an intuitive user interface).
-* **AI/ML Integration:**
-    * Google Cloud AI Platform (e.g., Gemini API for Generative AI functionalities like summarization, chatbot, quiz generation).
-    * Potentially Python scripts for advanced NLP preprocessing or custom analysis, deployed via Firebase Cloud Functions.
-* **Data Analysis:** SQL (for data querying), Python (Pandas, Matplotlib/Seaborn for insights and visualizations).
+![App Screenshot](https://i.imgur.com/rN5gL0D.png)
+*(Replace this placeholder image with a real screenshot of your running application)*
 
-This stack was chosen for its rapid development capabilities, scalability, and seamless integration with powerful AI services, allowing for a focused demonstration of product features.
+## Tech Stack
 
-## 🛣️ Product Roadmap & Future Enhancements (Conceptual)
+* **Language:** Python
+* **Web Framework:** [Streamlit](https://streamlit.io/)
+* **LLM:** [Google Gemini Pro](https://ai.google.dev/)
+* **Libraries:** `google-generativeai`, `pandas`
 
-This project lays the foundation for a comprehensive learning platform. Future considerations include:
+## Local Setup and Installation
 
-* Gamification elements (badges, leaderboards) to boost engagement.
-* Peer-to-peer learning features and discussion forums.
-* Integration with popular HRIS (Human Resources Information Systems) and communication platforms (Slack, Teams).
-* Advanced AI capabilities like automated content creation from outlines.
-* Multi-language support for truly global team adoption.
+Follow these steps to run the project on your local machine.
 
-## 🎯 Impact & Relevance to Scale AI
+#### 1. Clone the Repository
 
-As a Product Manager with experience in strategic initiatives and cross-functional leadership, I developed LearnScale AI to showcase how AI can drive significant operational efficiencies and improve the employee experience. [cite_start]For a company like Scale AI, which operates at the forefront of AI and boasts a valuation of $14 billion with major clients like OpenAI, Meta, and Microsoft, a solution like LearnScale AI could:
+#bash
+git clone [https://github.com/YOUR_USERNAME/feedback_analyzer.git](https://github.com/YOUR_USERNAME/feedback_analyzer.git)
+cd feedback_analyzer
 
-* **Accelerate Onboarding:** Get new talent, especially in complex technical roles, up to speed faster.
-* **Scale Knowledge Transfer:** Efficiently disseminate critical information across a rapidly expanding global workforce.
-* [cite_start]**Foster Innovation:** Provide a platform for continuous learning, aligning with Scale AI's mission to power the world's most ambitious AI programs.
-* **Optimize Resources:** Reduce the burden on L&D and HR teams, allowing them to focus on more strategic initiatives.
+# Create the environment
+python3 -m venv .venv
 
-This project embodies the entrepreneurial mindset of building impactful solutions from the ground up, a skill highly valued at Scale AI.
+# Activate the environment
+source .venv/bin/activate
 
-## 📊 How to Run (Conceptual - For Portfolio Demonstration)
-
-*(Note: For a fully functional demo, detailed setup instructions would be provided. For a portfolio piece, this section can describe the conceptual steps.)*
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone [https://github.com/yourusername/learnscale-ai.git](https://github.com/yourusername/learnscale-ai.git)
-    cd learnscale-ai
-    ```
-2.  **Firebase Setup:**
-    * Create a Firebase project.
-    * Initialize Firebase CLI in your project directory (`firebase init`).
-    * Configure Firestore, Authentication, and Cloud Functions.
-    * Deploy Firebase Cloud Functions for AI integration (requires `gcloud` authentication for Gemini API or similar).
-3.  **Frontend Setup (Lovable/Bolt/React/Vue):**
-    * Install necessary dependencies (`npm install` or `yarn install`).
-    * Configure Firebase SDK with your project credentials.
-    * Run the development server (`npm start` or `yarn serve`).
-4.  **Content Ingestion:**
-    * Utilize the admin interface (or directly populate Firestore) to upload sample training documents.
-
-## 🤝 Contributing
-
-This project is primarily for portfolio demonstration. However, feedback and suggestions are welcome!
-
-## 📧 Contact
-
-Jorge Vazquez Trujillo
-LinkedIn: [Your LinkedIn Profile URL]
-Personal Website: [Your Personal Website URL]
-Email: [Your Email Address]
-
----
+#Install all the required Python libraries using the requirements.txt file.
+pip install -r requirements.txt
