@@ -1,0 +1,6 @@
+De ahora en adelante, tu rutina para trabajar en este proyecto será:
+
+Abre la terminal y navega a la carpeta del proyecto.
+Activa el entorno: source .venv/bin/activate
+Corre tu aplicación: streamlit run app.py
+Cuando termines, desactiva el entorno: deactivate
