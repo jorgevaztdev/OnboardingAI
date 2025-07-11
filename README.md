@@ -21,11 +21,6 @@ This tool provides a simple interface to paste raw user feedback and leverage a 
 
 ## Demo
 
-*(It is highly recommended to create a short GIF of your app in action and place it here!)*
-
-![App Screenshot](https://i.imgur.com/rN5gL0D.png)
-*(Replace this placeholder image with a real screenshot of your running application)*
-
 ## Tech Stack
 
 * **Language:** Python
@@ -39,8 +34,7 @@ Follow these steps to run the project on your local machine.
 
 #### 1. Clone the Repository
 
-#bash
-git clone [https://github.com/YOUR_USERNAME/feedback_analyzer.git](https://github.com/YOUR_USERNAME/feedback_analyzer.git)
+#bash git clone [https://github.com/jorgevaztdev/feedback_analyzer.git](https://github.com/jorgevaztdev/feedback_analyzer.git)
 cd feedback_analyzer
 
 # Create the environment
